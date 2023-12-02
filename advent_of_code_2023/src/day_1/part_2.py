@@ -25,7 +25,4 @@ def app(filename: str) -> int:
   result = sum(clear_values)
 
 
-  print("The answer to task 2 is:")
-  print(result)
-
   return(result)

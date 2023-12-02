@@ -1,6 +1,5 @@
 import re
 
-
 class Sample():
   __red: int
   __green: int
@@ -84,6 +83,13 @@ class Game():
 
     return self.get_game_number()
 
+  def get_minimal_set(self):
+    return (
+        self.get_max_red(),
+        self.get_max_green(),
+        self.get_max_blue()
+    )
+
 
 def get_game_no(data: str) -> int:
 
@@ -91,7 +97,7 @@ def get_game_no(data: str) -> int:
 
   re_pattern: re.Pattern = re.compile(PATTERN, re.IGNORECASE)
 
-  matches: re.Match = re_pattern.match(data)
+  matches: re.Match = re_pattern.match(data)  # type: ignore
 
   if matches == None:
     raise ValueError(data)
@@ -105,7 +111,7 @@ def get_rgb_values(data: str) -> 'tuple[int,int,int]':
 
   re_pattern: re.Pattern = re.compile(PATTERN, re.IGNORECASE)
 
-  matches: re.Match = re_pattern.match(data)
+  matches: re.Match = re_pattern.match(data)  # type: ignore
 
   if matches == None:
     raise ValueError(data)

@@ -1,7 +1,8 @@
 import os
 from advent_of_code_2023.src.day_1 import utils
 
-def app(filename: str) -> None:
+
+def app(filename: str) -> int:
 
   data: str 
 
@@ -23,6 +24,4 @@ def app(filename: str) -> None:
       
   result = sum(clear_values)
 
-
-  print("The answer to task 1 is:")
-  print(result)
+  return result
